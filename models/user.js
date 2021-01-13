@@ -13,10 +13,13 @@ const userSchema = new Schema({
         type: Number,
     },
     currentChores: {
-        objectId: oid,
+        type: Schema.Types.ObjectId,
+        ref: "Chores"
     },
     pastChores: {
-        objectId: Array
+        type: Schema.Types.ObjectId,
+        ref: "Chores"
     }
 
 })
+module.exports = mongoose.model("User", userSchema)
